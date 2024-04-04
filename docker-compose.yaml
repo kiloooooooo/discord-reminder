@@ -10,4 +10,4 @@ services:
       - vol_node_modules:/app/node_modules
       - vol_dist:/app/dist
       - .:/app
-    command: [ "asc", "-c", "yarn build && yarn start" ]
+    command: [ "ash", "-c", "yarn build && yarn start" ]
