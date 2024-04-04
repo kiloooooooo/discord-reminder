@@ -8,8 +8,7 @@ const validateDate = (value: Date, toBe: Date) => {
 }
 
 describe('日付付きの記法をパースできる', () => {
-    const spy = jest
-        .spyOn(Date, 'now')
+    jest.spyOn(Date, 'now')
         .mockImplementation(() => new Date(2024, 2, 31, 16, 47, 30).getTime())
 
     describe('秒あり', () => {
@@ -86,8 +85,7 @@ describe('日付付きの記法をパースできる', () => {
 })
 
 describe('日付なしの記法をパースできる', () => {
-    const spy = jest
-        .spyOn(Date, 'now')
+    jest.spyOn(Date, 'now')
         .mockImplementation(() => new Date(2024, 2, 31, 18, 4, 20).getTime())
 
     describe('秒あり', () => {

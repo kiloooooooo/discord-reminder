@@ -30,7 +30,7 @@ async function main() {
         schedule.scheduleJob(reminder.id, reminder.date, getReminderSender(reminder))
     })
 
-    client.once(Events.ClientReady, readyClient => {
+    client.once(Events.ClientReady, _ => {
         logger.info('Client is running')
     })
 
