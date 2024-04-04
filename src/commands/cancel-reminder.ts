@@ -16,7 +16,7 @@ export default {
         const id = interaction.options.getNumber('id')!
         const cancelledReminder = await RemindersDBWrapper.getInstance().deleteReminder(id.toString())
 
-        scheduledJobs[cancelledReminder.id].cancel()
+        scheduledJobs[cancelledReminder.id.toString()].cancel()
 
         await interaction.reply({
             content: `キャンセルされました:\n\`${cancelledReminder.id}\`\n> ${cancelledReminder.message}`
