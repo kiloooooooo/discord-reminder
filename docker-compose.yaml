@@ -1,0 +1,13 @@
+volumes:
+  vol_node_modules:
+  vol_dist:
+services:
+  node:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    volumes:
+      - vol_node_modules:/app/node_modules
+      - vol_dist:/app/dist
+      - .:/app
+    command: [ "asc", "-c", "yarn build && yarn start" ]
