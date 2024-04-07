@@ -3,6 +3,8 @@ volumes:
   vol_dist:
 services:
   node:
+    environment:
+      - TZ=Asia/Tokyo
     build:
       context: .
       dockerfile: node.dockerfile
